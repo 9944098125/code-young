@@ -1,0 +1,19 @@
+.main-form-head{
+    font-size:40px;
+    font-family:"Lobster";
+    margin:20px;
+}
+form{
+    background-color:rgb(233, 166, 42);
+    height:100vh;
+    width:100vw;
+}
+input{
+    width:60vw;
+    margin-left:30px;
+    height:45px;
+}
+label{
+    margin-left:30px;
+    font-size:15px;
+}

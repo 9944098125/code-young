@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
+import ProtectedRoute from './components/ProtectedRoute'
+import Login from "./components/Login"
+import SignUp from "./components/Signup"
+import CurrencyConverter from "./components/CurrencyConverter"
 
 function App() {
-  return (
+  return (<Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div className="auth-wrapper">
+        <div className="auth-inner">
+          <Switch>
+            <ProtectedRoute exact path='/' component={CurrencyConverter} />
+            <Route path="/sign-in" component={Login} />
+            <Route path="/sign-up" component={SignUp} />
+          </Switch>
+        </div>
+      </div>
+    </div></Router>
   );
 }
 
